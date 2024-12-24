@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bind KeyWord With Exp Of React</title>
+  </head>
+  <body>
+    <button>Btn Clicked</button>
+  </body>
+  <script>
+    class React {
+      constructor() {
+        this.library = "React";
+        this.server = "http://127.0.0.1:5500/Bind.html";
+        document
+          .querySelector("button")
+          .addEventListener("click", this.handleClick.bind(this));
+      }
+
+      //requirment
+
+      handleClick() {
+        console.log("Btn clicked");
+        // console.log(this.server); // withour bind the server is undefinded
+        console.log(this); // withour bind the server is undefinded
+        console.log(this.server);
+      }
+    }
+
+    const app = new React();
+  </script>
+</html>
+<!-- Sure! Let’s go through your HTML and JavaScript code step-by-step to understand what it does.
+
+HTML Structure
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bind KeyWord With Exp Of React</title>
+  </head>
+  <body>
+    <button>Btn Clicked</button>
+  </body>
+Explanation:
+<!DOCTYPE html>: This declares the document as an HTML5 document.
+<html lang="en">: This tag starts the HTML document. The lang attribute specifies the language of the document (in this case, English).
+<head> Section:
+<meta charset="UTF-8">: Sets the character encoding for the document to UTF-8, which supports most characters from different languages.
+<meta name="viewport" content="width=device-width, initial-scale=1.0">: Makes the webpage responsive by adjusting its width and scaling on different devices.
+<title>: Specifies the title of the webpage, which appears in the browser tab.
+<body> Section:
+Contains a single button element with the text "Btn Clicked". This button will be interacted with in the JavaScript code.
+JavaScript Code
+html
+Copy code
+<script>
+  class React {
+    constructor() {
+      this.library = "React";
+      this.server = "http://127.0.0.1:5500/Bind.html";
+      document
+        .querySelector("button")
+        .addEventListener("click", this.handleClick.bind(this));
+    }
+
+    handleClick() {
+      console.log("Btn clicked");
+      console.log(this);
+      console.log(this.server);
+    }
+  }
+
+  const app = new React();
+</script>
+Explanation:
+<script>: This tag includes JavaScript code within the HTML document.
+
+Defining a Class React:
+
+class React { ... }: A class is a blueprint for creating objects. Here, we create a class called React. (Note: This is just the name of the class; it’s not the actual React.js library).
+constructor(): A special method in a class that is automatically called when a new instance of the class is created. Think of it as an initializer.
+Inside the Constructor:
+
+this.library = "React";: Creates a property library in the object with the value "React".
+this.server = "http://127.0.0.1:5500/Bind.html";: Creates another property server with the value "http://127.0.0.1:5500/Bind.html".
+Event Listener:
+javascript
+Copy code
+document.querySelector("button").addEventListener("click", this.handleClick.bind(this));
+document.querySelector("button"): Selects the <button> element in the HTML.
+addEventListener("click", this.handleClick.bind(this));: Adds an event listener to the button that listens for a "click" event. When the button is clicked, the handleClick method is called.
+Understanding .bind(this):
+
+this.handleClick.bind(this): This part is crucial. It makes sure that the context of this inside the handleClick method refers to the instance of the class React.
+Without .bind(this), the context of this inside the handleClick method would be undefined or the button object itself, not the instance of React.
+handleClick() Method:
+
+This method is executed when the button is clicked.
+console.log("Btn clicked");: Prints the message "Btn clicked" to the console.
+console.log(this);: Prints the current context of this (which will be the React instance because of the .bind(this)).
+console.log(this.server);: Prints the value of the server property from the React instance.
+Creating an Instance:
+
+const app = new React();: Creates a new instance of the React class, which in turn calls the constructor method and sets up the event listener.
+Why is .bind(this) Needed?
+When an event handler like handleClick is passed to addEventListener, the value of this inside the function may change to the element that triggered the event (in this case, the button). By using .bind(this), we explicitly tell JavaScript to always use the instance of the React class as this, preserving the correct context.
+
+Without .bind(this), you would see undefined or unexpected values when trying to access properties like this.server.
+
+Summary
+This code defines a simple custom React class.
+When the button is clicked, it prints some messages and information to the console.
+.bind(this) is used to ensure the correct context is preserved when the event handler is called. -->

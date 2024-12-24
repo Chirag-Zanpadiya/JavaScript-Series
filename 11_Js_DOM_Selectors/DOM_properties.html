@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM | Learning</title>
+  </head>
+
+  <body style="background-color: #212121">
+    <div class="parent">
+      <!-- this will   -->
+      <!--this will affect the on the nodelist-->
+      <div class="day">Monday</div>
+      <div class="day">Tuesday</div>
+      <div class="day">Wednsday</div>
+      <div class="day">Thursday</div>
+      <div class="day">Friday</div>
+      <div class="day">Saturday</div>
+      <div class="day">Sunday</div>
+    </div>
+  </body>
+  <script>
+    let parent = document.querySelector(".parent");
+    // console.log(parent);
+    // console.log(parent.children);
+    // console.log(typeof parent);
+    
+    // console.log(Array.from(parent.children).forEach( (val)=>{console.log(val.innerText)} ))
+    // console.log(parent.firstElementChild.innerText);
+    // console.log(parent.lastElementChild.innerText);
+
+    // Array.from(parent.children).forEach((val) => {
+    //   val.style.backgroundColor = "#212121";
+    //   val.style.color = "#0ef";
+    // });
+    // let first_child = document.querySelector(".day");
+    // // console.log(first_child.parentElement);
+    // // console.log(first_child.parentNode);
+    // let day2 = first_child.nextElementSibling;
+    // // // console.log(`Day-2 : is here : ${day2}`);
+    // console.log(day2.innerHTML);
+
+    // console.log(day2.previousElementSibling.innerHTML);
+
+    // console.log(parent.childNodes); // this will more specific
+    // console.log(parent.children);
+    // console.log(parent.childNodes);
+  </script>
+</html>

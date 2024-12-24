@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.container{
+    margin:30px 0 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn{
+    height: 200px;
+    width: 200px;
+    border: 2px solid black;
+    margin-right: 5px;
+    border-radius: 50%;
+
+}
+
+#grey{
+    background-color: #212121;
+}
+#yellow{
+    background-color: yellow;
+}
+#blue{
+    background-color: blue;
+}
+#white{
+    background-color: white;
+}

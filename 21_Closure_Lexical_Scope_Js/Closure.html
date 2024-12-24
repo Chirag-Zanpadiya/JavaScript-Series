@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="orange">Orange</button>
+    <button id="blue">Blue</button>
+    <button id="red">Red</button>
+    <button id="yellow">yellow</button>
+    <button id="green">green</button>
+    <button id="aqua">aqua</button>
+  </body>
+
+  <script>
+    // my requirement is change the bg-color according to btn
+
+    // 1try
+    //for exp 500 btn  than this is not vvalid
+    // document.getElementById("orange").onclick = function () {
+    //   document.body.style.backgroundColor = "orange";
+    // };
+
+    // document.getElementById("blue").onclick = function () {
+    //   document.body.style.backgroundColor = "blue";
+    // };
+
+    // document.getElementById("red").onclick = function () {
+    //   document.body.style.backgroundColor = "red";
+    // };
+
+    // 2try
+
+    // function clickhandler(color) {
+    //   document.body.style.backgroundColor = `${color}`;
+    // }
+
+    // document.getElementById("orange").onclick = clickhandler("orange"); // yaha to bina click kare hi orange ho gaya
+    // document.getElementById("red").onclick = clickhandler("red"); // yaha to bina click kare hi orange ho gaya
+
+    // 3try
+    function clickhandler(color) {
+      return function () {
+        document.body.style.backgroundColor = `${color}`;
+      };
+    }
+
+    document.getElementById("orange").onclick = clickhandler("orange");
+    document.getElementById("red").onclick = clickhandler("red");
+    document.getElementById("blue").onclick = clickhandler("blue");
+    document.getElementById("aqua").onclick = clickhandler("aqua");
+    document.getElementById("green").onclick = clickhandler("green");
+    document.getElementById("yellow").onclick = clickhandler("yellow");
+  </script>
+</html>

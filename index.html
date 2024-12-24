@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AppendChild, Append, Prepend Example</title>
+    <style>
+      #parent {
+        border: 2px solid #333;
+        padding: 10px;
+        margin: 20px;
+        font-family: Arial, sans-serif;
+      }
+      .child {
+        background-color: #f0f0f0;
+        padding: 5px;
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div id="parent">
+    <p>This is the parent element.</p>
+  </div>
+  <button id="appendChildBtn">AppendChild</button>
+  <button id="appendBtn">Append</button>
+  <button id="prependBtn">Prepend</button> -->
+    <div
+      id="container"
+      style="width: 200px; height: 200px; border: 2px solid blue"
+    >
+      <p>Hover over this box</p>
+    </div>
+
+    <script>
+      // const parent = document.getElementById("parent");
+
+      // // AppendChild Example
+      // document.getElementById("appendChildBtn").addEventListener("click", () => {
+      //   const child = document.createElement("div");
+      //   child.classList.add("child");
+      //   child.textContent = "Added with appendChild!";
+      //   parent.appendChild(child);
+      // });
+
+      // // Append Example
+      // document.getElementById("appendBtn").addEventListener("click", () => {
+      //   parent.append(
+      //     "Added text with append! ",
+      //     document.createElement("div").classList.add("child"));
+      // });
+
+      // // Prepend Example
+      // document.getElementById("prependBtn").addEventListener("click", () => {
+      //   const child = document.createElement("div");
+      //   child.className = "child";
+      //   child.textContent = "Added with prepend!";
+      //   parent.prepend(child, " Added text at the start! ");
+      // });
+      const container = document.getElementById("container");
+
+      container.onmouseenter = function () {
+        console.log("Mouse entered the container!");
+      };
+    </script>
+  </body>
+</html>

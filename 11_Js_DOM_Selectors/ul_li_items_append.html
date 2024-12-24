@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM ||</title>
+  </head>
+  <body>
+    <ul class="lan">
+      <li>Js</li>
+    </ul>
+  </body>
+  <script>
+    // function addlang(langname) {
+    //   let li = document.createElement("li");
+    //   li.innerText = `${langname}`;
+    //   console.log(langname);
+    //   document.querySelector(".lan").appendChild(li);
+    // }
+    // addlang("php");
+    // addlang("python");
+    // addlang("c++");
+    // addlang("c");
+    // addlang("ruby");
+
+    // // below is the optimazed approach
+    function addOptiLang(langname) {
+      let li = document.createElement("li");
+      li.appendChild(document.createTextNode(langname));
+      document.querySelector(".lan").appendChild(li);
+    }
+    addOptiLang("vue js");
+    addOptiLang("react js");
+
+    //edit
+
+    // three diff ways to change the element
+    // // 1) change the innerHtml 2) create the new element and replace them 3) change the outerHTML
+    let seclang = document.querySelector("li:nth-child(2)");
+
+    console.log(seclang);
+    seclang.innerHTML = "mojo"
+    let li = document.createElement("li");
+    let text = document.createTextNode("chirag");
+    li.append(text);
+    li.setAttribute("class", "main");
+    console.log(li);
+    seclang.replaceWith(li);
+    // console.log(seclang);
+
+    let first_lang = document.querySelector("li:first-child");
+    // console.log(first_lang);
+    first_lang.outerHTML = "<li>AWS</li>";
+  </script>
+</html>

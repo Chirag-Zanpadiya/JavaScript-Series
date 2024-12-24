@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Welcome To ZCATechX</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+  </body>
+  <script>
+    let startbtn = document.querySelector("#start");
+    let inverval;
+    startbtn.addEventListener("click", () => {
+        inverval = setInterval(() => {
+          let now = new Date();
+        console.log(`Chirag  :- ${now.toTimeString()}`);
+      }, 1000);
+    });
+
+    let stopbtn = document.querySelector("#stop");
+    stopbtn.addEventListener("click", () => {
+      clearInterval(inverval);
+    });
+
+    
+  </script>
+</html>

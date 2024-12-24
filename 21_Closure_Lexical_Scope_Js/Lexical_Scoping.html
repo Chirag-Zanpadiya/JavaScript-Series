@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lexical Scoping</title>
+  </head>
+  <body></body>
+  <script>
+    // console.log(`Child parent ki properties ko acess kar sakte hai `);
+    // function outter() {
+    //   let name = "chirag zanpadiya";
+    //   function innter() {
+    //     console.log(`Name is the innter fns : ${name}`);
+    //   }
+    //   innter();
+    // }
+    // outter();
+
+    // // console.log(`parent child ki properties ko access nahi kar sakte `);
+
+    // function outter() {
+    //   let name = "chirag zanpadiya";
+    //   function innter() {
+    //     let secret = "ghee@gmail.com";
+    //     console.log(`Name is the innter fns : ${name}`);
+    //   }
+
+    //   innter();
+    //   console.log(`Secret key access by the parent : ${secret}`);
+    // }
+    // outter();
+
+    // console.log(`child child bi aps me properties ko access nahi kar sakte `);
+
+    // function outter() {
+    //   let name = "chirag zanpadiya";
+    //   function innter() {
+    //     let secret = "ghee@gmail.com";
+    //     console.log(`Name is the innter fns : ${name}`);
+    //   }
+    //   function innterTwo() {
+    //     console.log(secret);
+    //   }
+
+    //   innter();
+    //   innterTwo();
+    // }
+    // outter();
+
+    //
+
+    function outter() {
+      let name = "chirag zanpadiya";
+      function innter() {
+        let secret = "ghee@gmail.com";
+        console.log(`Name is the innter fns : ${name}`);
+        function innterTwo() {
+          console.log(secret);
+        }
+        innterTwo();
+      }
+
+      innter();
+    }
+    outter();
+  </script>
+</html>

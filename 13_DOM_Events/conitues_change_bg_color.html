@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Create Start And End Button</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    let startbtn = document.querySelector("#start");
+    let stopbtn = document.querySelector("#stop");
+    function generate_rand_color() {
+      let red = Math.floor(Math.random() * 256);
+      let green = Math.floor(Math.random() * 256);
+      let blue = Math.floor(Math.random() * 256);
+
+      return `rgb(${red} , ${blue} , ${blue})`;
+    }
+
+    let interval;
+
+    startbtn.addEventListener("click", () => {
+      console.log("btn clicked");
+
+      // console.log(generate_rand_color());
+
+      if (interval == null) {
+        interval = setInterval(() => {
+          document.querySelector("body").style.backgroundColor =
+            generate_rand_color();
+        }, 100);
+      }
+    });
+    stopbtn.addEventListener("click", () => {
+      clearInterval(interval);
+      interval = null
+    });
+  </script>
+</html>

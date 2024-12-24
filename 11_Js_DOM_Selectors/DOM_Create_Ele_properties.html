@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM | Create-Element</title>
+  </head>
+  <body style="background-color: #212112"></body>
+  <script>
+    let div = document.createElement("div");
+    div.setAttribute("class", "bg-black");
+    // div.setAttribute("class", "bg-blue");
+    div.setAttribute("id", "main-div");
+    // console.log(div);
+    // console.log(div);
+    div.classList.add("bg-blue");
+    console.log(div);
+    div.style.backgroundColor = "blue";
+    div.style.color = "green";
+    div.style.padding = "15px";
+
+    div.innerText = "Chirag Zanpadiya";
+    console.log(div);
+    document.body.append(div);
+    
+  </script>
+</html>
